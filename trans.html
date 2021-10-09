@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css"
+      integrity="sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Spark Bank</title>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="icon">
+        <a href="index.html"><i class="fas fa-dollar-sign fa-2x"></i></a>
+      </div>
+      <div class="navLinks">
+        <ul class="flex">
+          <li class="mr-3">
+            <a
+              class="
+                inline-block
+                border border-blue-500
+                rounded
+                py-1
+                px-3
+                bg-blue-500
+                text-white
+              "
+              href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="mr-3">
+            <a
+              class="
+                inline-block
+                border border-blue-500
+                rounded
+                py-1
+                px-3
+                bg-green-500
+                text-black
+                hover:bg-gray-200
+                py-1
+                px-3
+              "
+              href="trans.html"
+              >Transactions</a
+            >
+          </li>
+          <li class="mr-3">
+            <a
+              class="
+                inline-block
+                border border-white
+                rounded
+                hover:border-gray-200
+                text-black-500
+                hover:bg-gray-200
+                py-1
+                px-3
+              "
+              href="about.html"
+              >About</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h1 class="text-4xl" style="text-align: center">
+      Name : Vivek
+    </h1>
+      <br />
+      <h1 class="text-4xl text-center">Balance : $<span class="currentBal">7000</span></h1>
+    <div class="button">
+      <button
+        class="
+          sendToggle
+          bg-green-500
+          hover:bg-blue-700
+          text-white
+          font-bold
+          py-2
+          px-4
+          rounded-full
+        "
+      >
+        Send Money
+      </button>
+    </div>
+    
+    <div class="modal">
+      <label>Select User : </label><br>
+      <select name="name" id="rName" style="border: 1px solid black;">
+        <option value="Ravi">Ravi</option>
+        <option value="Ganesh">Ganesh</option>
+        <option value="Tejas">Tejas</option>
+        <option value="Sarim">Sarim</option>
+        <option value="Aman">Aman</option>
+        <option value="Krishna">Krishna</option>
+        <option value="Kailash">Kailash</option>
+        <option value="Vikas">Vikas</option>
+        <option value="Abhishek">Abhishek</option>
+        <option value="Harsh">Harsh</option>
+      </select><br>
+      <label>Enter amount : </label><br>
+      <input style="border: 1px solid black;" type="number" id="rAmount" name="name" placeholder="Enter amount : "><br>
+      <button  class="
+      bg-green-500
+      hover:bg-blue-700
+      text-white
+      font-bold
+      py-2
+      px-4
+      rounded-full
+      sendMoney
+    ">Send</button>
+    <button  class="
+     cancel
+      bg-red-500
+      hover:bg-green-700
+      text-white
+      font-bold
+      py-2
+      px-4
+      rounded-full
+    ">Cancel</button>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-8">
+      <div class="py-8">
+        <div>
+          <h2 class="text-2xl font-semibold leading-tight">All Users</h2>
+        </div>
+        <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+          <div
+            class="inline-block min-w-full shadow rounded-lg overflow-hidden"
+          >
+            <table class="min-w-full leading-normal">
+              <thead>
+                <tr>
+                  <th
+                    class="
+                      px-5
+                      py-3
+                      border-b-2 border-gray-200
+                      bg-gray-100
+                      font-semibold
+                      text-gray-600
+                      uppercase
+                      tracking-wider
+                    "
+                  >
+                    Sr. No.
+                  </th>
+                  <th
+                    class="
+                      px-5
+                      py-3
+                      border-b-2 border-gray-200
+                      bg-gray-100
+                      font-semibold
+                      text-gray-600
+                      uppercase
+                      tracking-wider
+                    "
+                  >
+                    Name
+                  </th>
+                  <th
+                    class="
+                      px-5
+                      py-3
+                      border-b-2 border-gray-200
+                      bg-gray-100
+                      font-semibold
+                      text-gray-600
+                      uppercase
+                      tracking-wider
+                    "
+                  >
+                    Email
+                  </th>
+                  <th
+                    class="
+                      px-5
+                      py-3
+                      border-b-2 border-gray-200
+                      bg-gray-100
+                      font-semibold
+                      text-gray-600
+                      uppercase
+                      tracking-wider
+                    "
+                  >
+                    Balance(in"$")
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap">1.</p>
+                  </td>
+                  <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      Ravi
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm
+                      w-2/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      ravi@email.com
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p id="Ravi">5000</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap">2.</p>
+                  </td>
+                  <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      Ganesh
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm
+                      w-2/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      ganesh@email.com
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p id="Ganesh">7000</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap">3.</p>
+                  </td>
+                  <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      Tejas
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm
+                      w-2/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      tejas@email.com
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p id="Tejas">6000</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap">4.</p>
+                  </td>
+                  <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      Sarim
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm
+                      w-2/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      sarim@email.com
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p id="Sarim">3000</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap">5.</p>
+                  </td>
+                  <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      Aman
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm
+                      w-2/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      aman@email.com
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p id="Aman">9000</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap">6.</p>
+                  </td>
+                  <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      Krishna
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm
+                      w-2/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      krishna@email.com
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p id="Krishna">4000</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap">7.</p>
+                  </td>
+                  <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      Kailash
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm
+                      w-2/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      kailask@email.com
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p id="Kailash">5000</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap">8.</p>
+                  </td>
+                  <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      Vikas
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm
+                      w-2/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      vikas@email.com
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p id="Vikas">6000</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap">9.</p>
+                  </td>
+                  <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      Abhishek
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm
+                      w-2/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      abhishek@email.com
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p id="Abhishek">7000</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap">10.</p>
+                  </td>
+                  <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      Harsh
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm
+                      w-2/5
+                    "
+                  >
+                    <p class="text-gray-900 whitespace-no-wrap text-center">
+                      harsh@email.com
+                    </p>
+                  </td>
+                  <td
+                    class="
+                      px-5
+                      py-5
+                      border-b border-gray-200
+                      bg-white
+                      text-sm text-center
+                      w-1/5
+                    "
+                  >
+                    <p id="Harsh">9000</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="history">
+        <p class="text-3xl text-center">History</p>
+        <ul class="history">
+          
+        </ul>
+    </div>
+
+    <footer>
+      <p>Made by Vivek Vishwakarma <a href="https://github.com/Vivek-Vishwakarma"><i class="fab fa-github fa-2x"></i></a>  <a href="https://www.linkedin.com/in/vivek-vishwakarma-2172a519b/"><i class="fab fa-linkedin fa-2x"></i></a></p>
+  </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
