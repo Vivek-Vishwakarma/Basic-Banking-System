@@ -5,11 +5,11 @@ const rAmount = document.querySelector("#rAmount");
 const rName = document.querySelector("#rName");
 const cancel = document.querySelector(".cancel");
 sendToggle.addEventListener("click", () => {
-  if (modal.style.left === "-60%") {
+  if (modal.style.left === "-80%") {
     modal.style.left = "0";
     modal.style.height = "200px"
   } else {
-    modal.style.left = "-60%";
+    modal.style.left = "-80%";
     modal.style.height = "0px"
   }
 });
@@ -36,7 +36,7 @@ sendMoney.addEventListener("click", () => {
   }
 });
 cancel.addEventListener("click", () => {
-    modal.style.left = "-60%";
+    modal.style.left = "-80%";
     modal.style.height = "0px"
 });
 
